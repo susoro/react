@@ -16,8 +16,23 @@ function App() {
     <div className="black-nav">
         <h4>수경수 블로그</h4>
     </div>
+
+
+    <button onClick={() => {
+  let player = [...a]; // 현재 상태를 복제
+  player.sort((c, d) => c.toLowerCase() < d.toLowerCase() ? -1 : 1); // 가나다순으로 정렬
+  b(player); // 상태 업데이트
+}}> '가나다순으로 정리해요' </button>
+
+
+    <button onClick={()=> {
+     let copy = [...a];
+      copy[1]='정현시와 함께하는 삼각형 여행기';
+      b(copy);
+      } }>버튼누르깅</button>
+
     <div className="list">
-        <h4>{a[0]}<span onClick={()=> {likePlus+1}}>👍</span>{like}</h4>
+        <h4>{a[0]}<span onClick={()=> {likePlus(like + 1)}}>👍</span>{like}</h4>
         <p>3월 5일 발행</p>
       </div>
 
@@ -25,7 +40,13 @@ function App() {
         <h4>{a[1]}</h4>
         <p>3월 6일 발행</p>
       </div>
-
+      
+      
+      <div className="modal">
+        <h4>제목</h4>
+        <p>날짜</p>
+        <p>상세내용</p>
+      </div>
 
       <div className="list">
         <h4>{a[2]}</h4>
